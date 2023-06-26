@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
   template: `
     <main>
       <a [routerLink]="['/']">
+        <img class="brand-logo" src="/assets/home.png" aria-hidden="true">
       </a>
       <section class="content">
         <router-outlet></router-outlet>
