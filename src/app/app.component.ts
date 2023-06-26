@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { homeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component'
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    homeComponent,
+    HomeComponent,
   ],
   template: `
     <main>
