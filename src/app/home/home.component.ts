@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryComponent } from '../gallery/gallery.component';
+import { Gallery } from '../gallery'
 
 @Component({
   selector: 'app-home',
@@ -17,11 +18,14 @@ import { GalleryComponent } from '../gallery/gallery.component';
       </form>
     </section>
     <section class="results">
-      <app-gallery></app-gallery>
+      <app-gallery [gallery]="gallery"></app-gallery>
     </section>
   `,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-
+  gallery: Gallery = {
+    id: 'test',
+    image: 'assets/image2.png'
+  };
 }
