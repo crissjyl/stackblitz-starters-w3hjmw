@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GalleryComponent } from '../gallery/gallery.component';
-import { Gallery } from '../gallery'
+import { Gallery } from '../gallery';
+import { GetImagesService } from '../get-images.service';
 
 @Component({
   selector: 'app-home',
@@ -18,14 +19,20 @@ import { Gallery } from '../gallery'
       </form>
     </section>
     <section class="results">
-      <app-gallery [gallery]="gallery"></app-gallery>
+      <app-gallery
+        *ngFor="let gallery of galleryList"
+        [gallery]="gallery">
+      </app-gallery>
     </section>
   `,
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  gallery: Gallery = {
-    id: 'test',
-    image: 'assets/image2.png'
-  };
+  galleryList: Gallery[] = [];
+  galleryService: GetImagesService = inject(GetImagesService);
+
+  constructor() {
+    this.galleryList = this.galleryService.getAllGalleryImages();
+  }
+
 }

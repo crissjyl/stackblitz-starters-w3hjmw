@@ -8,11 +8,11 @@ import { Gallery } from '../gallery';
   imports: [CommonModule],
   template: `
     <section class="card">
-      <img class="card-photo" [src]="gallery.image" alt="image of {{gallery.id}}">
+      <img class="card-photo" [src]="gallery.image">
     </section>
   `,
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent {
-  @Input() gallery!: Gallery;
+  @Input() gallery! : Gallery;
 }

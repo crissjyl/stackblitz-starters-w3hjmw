@@ -3,6 +3,10 @@
   border-radius: 30px;
   padding-bottom: 30px;
 }
+.card-heading {
+  color: var(--primary-color);
+  padding: 10px 20px 0 20px;
+}
 .card-photo {
   height: 250px;
   width: 100%;
