@@ -9,10 +9,9 @@ import { Gallery } from '../gallery';
   standalone: true,
   imports: [
     CommonModule,
-    ActivatedRoute
   ],
   template: `
-    <article
+    <article>
       <img class="card-photo" [src]="gallery?.image"/>
     </article>
   `,
