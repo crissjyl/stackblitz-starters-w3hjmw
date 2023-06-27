@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     HomeComponent,
     RouterModule,
+    HttpClientModule,
   ],
   template: `
     <main>
       <a [routerLink]="['/']">
-        <img class="brand-logo" src="/assets/home.png" aria-hidden="true">
+        <img class="logo-photo" src="/assets/home.png" aria-hidden="true">
       </a>
       <section class="content">
         <router-outlet></router-outlet>

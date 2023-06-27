@@ -5,27 +5,15 @@ import { Gallery } from './gallery';
   providedIn: 'root'
 })
 export class GetImagesService {
-  protected galleryList: Gallery[] = [
-    {
-      id: '0',
-      image: '/assets/image2.png'
-    },
-    {
-      id: '1',
-      image: '/assets/image3.png'
-    },
-    {
-      id: '2',
-      image: '/assets/image4.png'
-    }
-  ];
-
-  getAllGalleryImages(): Gallery[] {
-    return this.galleryList;
+  url = 'http://localhost:3000/cards';
+  async getAllGalleryImages(): Promise<Gallery[]> {
+    const data = await fetch(this.url);
+    return await data.json() ?? [];
   }
 
-  getImagebyId(id: string): Gallery | undefined {
-    return this.galleryList.find(gallery => gallery.id === id);
+  async getImagebyId(id: number): Promise<Gallery | undefined> {
+    const data = await fetch('${this.url}/${id}');
+    return await json.data() ?? {};
   }
 
 }

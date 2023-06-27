@@ -1,0 +1,16 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "image": "image2.png"
+    },
+    {
+      "id": 1,
+      "image": "image3.png"
+    },
+    {
+      "id": 2,
+      "image": "image4.png"
+    }
+  ]
+}
