@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -8,8 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [
     HomeComponent,
-    RouterModule,
-    HttpClientModule,
+    RouterOutlet,
+    //HttpClientModule,
+    RouterLink,
   ],
   template: `
     <main>

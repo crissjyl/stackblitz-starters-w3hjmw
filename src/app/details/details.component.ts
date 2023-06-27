@@ -7,9 +7,12 @@ import { Gallery } from '../gallery';
 @Component({
   selector: 'app-details',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ActivatedRoute
+  ],
   template: `
-    <article>
+    <article
       <img class="card-photo" [src]="gallery?.image"/>
     </article>
   `,
@@ -21,9 +24,8 @@ export class DetailsComponent {
   gallery: Gallery | undefined;
 
   constructor() {
-    const galleryId = parseInt(this.route.snapshot.params['id'], 10);
-    this.galleryService.getImagebyId(galleryId).then(gallery => {
-      this.gallery = gallery;
-    })
-  }
+    const galleryId = Number(this.route.snapshot.params['id']);
+    this.gallery = this.galleryService.getImagebyId(galleryId);
+    }
 }
+

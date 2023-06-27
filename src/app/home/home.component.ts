@@ -32,9 +32,7 @@ export class HomeComponent {
   galleryService: GetImagesService = inject(GetImagesService);
 
   constructor() {
-    this.galleryService.getAllGalleryImages().then((galleryList: Gallery[]) => {
-      this.galleryList = galleryList;
-    });
+    this.galleryList = this.galleryService.getAllImages();
   }
 
 }
